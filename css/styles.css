@@ -1,0 +1,145 @@
+/* Color Palette
+#2b2d42 - charcoal navy
+#8d99ae - slate blue-gray
+#edf2f4 - pale blue-gray
+#ef233c - crimson
+#ffffff - white
+*/
+
+/* Global styles
+------------------------------------*/
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding-top: 59px;
+    color: #2b2d42;
+    background: #edf2f4;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3 { margin-top: 0; }
+h1, h2 { font-family: "Caveat", cursive; }
+h1 { margin-bottom: 0.35rem; font-size: clamp(2.8rem, 6vw, 4.8rem); font-weight: 700; line-height: 1.1; }
+h2 { font-size: clamp(2rem, 3vw, 2.75rem); font-weight: 700; line-height: 1.25; }
+h3 { margin-bottom: 0.2rem; font-size: 1.25rem; }
+p, ul { margin: 0 0 1rem; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid #ef233c; outline-offset: 3px; }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.site-header, .work-experience, .education, footer { scroll-margin-top: 70px; }
+
+.content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+}
+
+.column-narrow {
+    float: left;
+    width: 30%;
+    min-height: 175px;
+    padding-right: 3%;
+}
+
+.column-wide {
+    float: left;
+    width: 70%;
+    min-height: 225px;
+}
+
+/* Header & Footer
+------------------------------------*/
+.site-nav {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(43, 45, 66, 0.18);
+    text-align: center;
+}
+
+.site-nav a {
+    display: inline-block;
+    padding: 0.1rem 0.9rem;
+    color: #ef233c;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.site-nav a:hover { color: #2b2d42; }
+.site-header { color: #edf2f4; background: #2b2d42; }
+.profile-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.site-header .column-narrow { width: 50%; }
+.site-header .column-wide { width: 50%; }
+.site-header h1, .site-header h2 { margin: 0; }
+.site-header h2 { color: #edf2f4; font-size: clamp(1.8rem, 3vw, 2.5rem); }
+
+footer { color: #edf2f4; background: #2b2d42; text-align: center; }
+.contact-info a { display: inline-block; padding: 10px; color: #ef233c; }
+.contact-info a:hover { color: #ffffff; }
+.contact-info i { margin-right: 0.35rem; }
+.copyright { margin: 1.5rem 0 0; font-size: 0.95rem; }
+
+/* Work Experience
+------------------------------------*/
+.work-experience { background: #edf2f4; }
+.job-item { overflow: hidden; padding: 1.75rem 0; border-top: 2px solid #8d99ae; }
+.job-item:last-child { padding-bottom: 0; }
+.company, .date { margin-bottom: 0.35rem; font-weight: 600; }
+.date { color: #ef233c; }
+
+/* Education
+------------------------------------*/
+.education {
+    color: #ffffff;
+    background:
+        linear-gradient(rgba(43, 45, 66, 0.80), rgba(43, 45, 66, 0.80)),
+        url("../images/education-background.png") center / cover no-repeat;
+    background-attachment: fixed;
+}
+.education-item { padding: 1.25rem 0; border-top: 1px solid rgba(237, 242, 244, 0.75); }
+.education-item:last-child { padding-bottom: 0; }
+.education-item p:last-child, .job-item p:last-child { margin-bottom: 0; }
+
+/* Responsive layout
+------------------------------------*/
+@media (max-width: 600px) {
+    body { padding-top: 102px; }
+    .site-nav { padding: 0.45rem 0.25rem; }
+    .site-nav a { padding: 0.2rem 0.35rem; font-size: 0.75rem; }
+    .content-wrap { padding: 2.5rem 1.5rem; }
+    .column-narrow, .column-wide { float: none; width: 100%; min-height: 0; padding-right: 0; }
+    .site-header .column-narrow, .site-header .column-wide { width: 100%; }
+    .profile-img {
+        display: block;
+        width: min(400px, calc(100vw - 3rem));
+        height: min(400px, calc(100vw - 3rem));
+        margin: 0 auto 1.5rem;
+    }
+    .site-header .column-wide { text-align: center; }
+}
